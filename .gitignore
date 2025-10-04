@@ -1,0 +1,49 @@
+############################################################
+# Backend 
+############################################################
+
+# Build Folders
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build Results
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+*.vspscc
+*.vssscc
+*.dbmdl
+*.bak
+*.backup
+*.tmp
+*.temp
+
+############################################################
+# Front end 
+############################################################
+
+# Dependencies
+node_modules/
+
+# Build output
+build/
+dist/
+out/
+
+# Logs
+npm-debug.log*
+
+# Editor directories and files
+.vscode/
+.history/

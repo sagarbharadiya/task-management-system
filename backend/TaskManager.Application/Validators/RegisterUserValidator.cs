@@ -13,8 +13,10 @@ namespace TaskManager.Application.Validators
         public RegisterUserValidator()
         {
             RuleFor(x => x.Username).NotEmpty()
-                .WithMessage("Username is required")
-                .MinimumLength(3);
+                .NotEmpty().WithMessage("Username is required")
+                .Matches(@"^[a-zA-Z0-9_]+$").WithMessage("Username can only contain letters, numbers, and underscores")
+                .MinimumLength(3).WithMessage("Username must be at least 3 characters long")
+                .MaximumLength(20).WithMessage("Username cannot exceed 20 characters");
             RuleFor(x => x.Email).NotEmpty()
                 .WithMessage("Email is required")
                 .EmailAddress();

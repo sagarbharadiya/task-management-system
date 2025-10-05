@@ -25,9 +25,9 @@ namespace TaskManager.Application.Services
 
         public async Task<AuthResponseDto> RegisterAsync(string username, string email, string password, Role role = Role.USER)
         {
-            var emailExists = await _userRepo.AnyAsync(u => u.Email == email);
+            var emailExists = await _userRepo.AnyAsync(u => u.Email == email || u.Username.ToLower().Equals(username.ToLower()));
             if (emailExists)
-                throw new InvalidOperationException("Email already registered.");
+                throw new InvalidOperationException("Username or Email already registered.");
 
             var user = new User
             {
